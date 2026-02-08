@@ -12,19 +12,14 @@ from folium import Element
 from utils.geo_tools import get_bounds, get_image
 from utils.model_interaction import predict_image
 
-#
 # Конфигурация работы Streamlit
-#
 
 DEFAULT_ZOOM = 17
 DEFAULT_CENTER = [41.9082, -87.7227]
 DEFAULT_ADDRESS = "1500 N Hamlin Ave, Чикаго"
 MODEL_FILE = "best_model.pth"
 
-
-#
 # Инициализация атрибутов session_state
-#
 
 
 def init_session_state(st):
@@ -64,9 +59,7 @@ def init_session_state(st):
         st.session_state.real_resolution = 0.0
 
 
-#
 # Красиво выводим приветственный текст :)
-#
 
 
 def stream_text_generator(text, delay=0.01):
@@ -91,9 +84,7 @@ def prepare_image_download(image, prefix="image"):
     return img_byte_arr, filename
 
 
-#
 # Текст сообщений, предупреждений и иконок, чтобы не дублировать их в коде
-#
 
 WELCOME_MESSAGE = """Привет! Давай посчитаем площадь застройки. Для этого тебе нужно: 
 1. Либо выбрать нужную область на карте, развернув спойлер
@@ -105,9 +96,7 @@ MAP_WARNING = """Важно! Чем меньше масштаб карты, те
 CHAT_ICON = ":material/robot:"
 
 
-#
 # Функции-модули streamlit, которые мы вызываем в коде несколько раз
-#
 
 
 def draw_map_widget(center: tuple = DEFAULT_CENTER, zoom: int = DEFAULT_ZOOM):

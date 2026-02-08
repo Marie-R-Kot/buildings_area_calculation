@@ -3,8 +3,9 @@
 
 import os
 
-from image_operations import ImageOperations
 from tqdm import tqdm
+
+from utils.image_operations import ImageOperations
 
 
 class DataOperations:
